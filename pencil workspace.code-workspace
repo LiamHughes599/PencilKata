@@ -2,13 +2,11 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "G:\\Web learning\\Raymond's project"
-		},
-		{
-			"path": "G:\\Web learning\\Node Learning\\testing"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"cSpell.words": [
+			"globalvar"
+		]
+	}
 }

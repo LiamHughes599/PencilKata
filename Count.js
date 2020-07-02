@@ -1,6 +1,6 @@
   
 //global variables
-var glob = require(`./globalvar.js`);
+var glob = require('./globalvar.js');
 var main = require('./app');
 
 function countLetters(txtInput){

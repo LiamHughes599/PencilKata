@@ -26,6 +26,7 @@ function eraser(fullPrint, erase, eraserDeg){
         console.log(" ");
         main.printText();
     }
+    
 }
 
 module.exports.eraser = eraser;

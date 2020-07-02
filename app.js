@@ -1,10 +1,10 @@
 var readline = require('readline');
 var rl = readline.createInterface(process.stdin, process.stdout);
 
-var Eraser = require(`./eraser.js`);
+var Eraser = require('./eraser.js');
 var count = require('./Count.js');
 var editer = require('./editer.js');
-var pencil = require(`./pencil.js`);
+var pencil = require('./pencil.js');
 
 var fullPrint = ["You have written:"];
 var pLength = 5;
@@ -46,6 +46,7 @@ function startInput(){
         break;
 
       case "erase":
+        
         rl.question('Enter the word you would like erased, or type `back` to go back.', (erase) =>{
           if (erase.toLowerCase().trim() === `back`){ 
             //Do nothing
@@ -56,14 +57,23 @@ function startInput(){
         break;
 
       case "edit":
-        console.log("Enter `back` to go back.");
-        rl.question('Enter what you would like to fill the blanks:', (edit) =>{
-          if (edit.toLowerCase().trim() === `back`){ 
-            //Do nothing
-          }else{
-            editer.editor(fullPrint, edit);
-          }
-        }) 
+        if(fullPrint.length == 1){
+          console.log("There's nothing to edit.");
+          console.log(" "); 
+         }
+         if(Eraser.emptySpace.length == 0){
+          console.log("You haven't erased anything yet.");
+          console.log(" "); 
+         }else{
+          console.log("Enter `back` to go back.");
+          rl.question('Enter what you would like to fill the blanks:', (edit) =>{
+            if (edit.toLowerCase().trim() === `back`){ 
+              //Do nothing
+            }else{
+              editer.editor(fullPrint, edit);
+            }
+          }) 
+        }
         break;
 
       default:
