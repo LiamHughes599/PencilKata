@@ -4,14 +4,8 @@ var glob = require('./globalvar.js');
 
 
 function editor(fullPrint, edit){
-  console.log(eraser.emptySpace);
   var startPoint = eraser.emptySpace[eraser.emptySpace.length - 1];
-
-
-
-
   var editLength = edit.length;
-  
   var spaceLength = fullPrint[startPoint].length;
 
   if(glob.point < editLength){
@@ -94,8 +88,6 @@ function editor(fullPrint, edit){
       
 
     }
-    console.log(" ");
-    console.log(fullPrint);
     main.printText();
   }
 }
